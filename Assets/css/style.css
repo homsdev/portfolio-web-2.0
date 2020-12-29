@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;900&display=swap");
+
 * {
   box-sizing: border-box;
 }
 
 :root {
-  --blue: #208ffd;
-  --green: #20fd8f;
+  --blue: #21fdfd;
+  --green: #8ffd21;
   --red: #fd2121;
   --background: #3e3e3e;
   --white: #f2f2f2;
@@ -13,6 +15,7 @@ html {
   width: 100%;
   height: 100vh;
   font-size: 10px;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -117,11 +120,6 @@ a {
   transform: translateY(2px) translateX(-100%);
 }
 
-.container {
-  width: 70%;
-  height: 100%;
-}
-
 .show-menu {
   width: 30%;
 }
@@ -198,4 +196,71 @@ a {
   background-color: var(--green);
 }
 
-/* Main */
+/* ============================
+          Main container 
+===============================*/
+
+.container {
+  width: 100%;
+}
+
+.scope {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/Assets/img/bg-main.jpg");
+  background-size: cover;
+  background-repeat: none;
+}
+
+.main {
+  width: 80%;
+  height: 60%;
+  padding: 10rem;
+  position: relative;
+}
+
+.banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  font-size: 4.8rem;
+  color: var(--red);
+  letter-spacing: 0.1rem;
+}
+
+.banner span {
+  color: var(--white);
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.2rem;
+}
+
+.description {
+  position: absolute;
+  top: 15rem;
+  left: 0;
+  width: 70%;
+  font-size: 2.4rem;
+  color: var(--white);
+  text-align: justify;
+  margin: 0;
+  letter-spacing: 0.1rem;
+}
+
+.btn {
+  width: 20%;
+  position: absolute;
+  top: 22.4rem;
+  left: 0;
+  background-color: var(--red);
+  font-size: 2.4rem;
+  color: var(--white);
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 15px;
+  padding: 1rem 1.5rem;
+  margin-top: 2rem;
+}
