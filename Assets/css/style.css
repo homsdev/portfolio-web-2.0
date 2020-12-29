@@ -1,0 +1,201 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #208ffd;
+  --green: #20fd8f;
+  --red: #fd2121;
+  --background: #3e3e3e;
+  --white: #f2f2f2;
+}
+html {
+  width: 100%;
+  height: 100vh;
+  font-size: 10px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  background-color: #3e3e3e;
+}
+
+header {
+  width: 0%;
+  transition: 0.5s ease;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*--------------
+      Menu
+---------------- */
+.navigation {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  transition: 5.5s ease;
+}
+
+.nav-list {
+  list-style: none;
+  text-transform: uppercase;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.nav-item {
+  margin-top: 2em;
+  transition: 0.3s;
+}
+
+.nav-item:last-child {
+  margin-bottom: 1rem;
+}
+
+.nav-item:first-child {
+  margin-top: none;
+}
+
+.nav-item a {
+  position: relative;
+  color: var(--blue);
+  border-bottom: 0.2rem solid var(--green);
+}
+
+.nav-item a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  transform: translateX(-49%) translateY(2px);
+  height: 2px;
+  width: 100%;
+  background-color: var(--background);
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.nav-item a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(2px) translateX(50%);
+  height: 2px;
+  width: 100%;
+  background-color: var(--background);
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.nav-item:hover,
+.nav-item:hover a {
+  transform: scale(1.2);
+  color: var(--green);
+}
+
+.nav-item a:hover:after {
+  bottom: 0;
+  left: 0;
+  transform: translateY(2px) translateX(100%);
+}
+
+.nav-item a:hover::before {
+  bottom: 0;
+  left: 0;
+  transform: translateY(2px) translateX(-100%);
+}
+
+.container {
+  width: 70%;
+  height: 100%;
+}
+
+.show-menu {
+  width: 30%;
+}
+
+/* ------------------
+      Hamburger     
+--------------------- */
+.hamburger-menu {
+  position: fixed;
+  right: 1.5rem;
+  top: 1.5rem;
+  height: 5rem;
+  width: 5rem;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.bar {
+  position: relative;
+  width: 100%;
+  height: 0.5rem;
+  background-color: var(--blue);
+  border-radius: 4px;
+}
+
+.hamburger-menu:hover .bar::before {
+  transform: translateY(-1rem);
+}
+
+.hamburger-menu:hover .bar::after {
+  transform: translateY(1rem);
+}
+
+.bar::after,
+.bar::before {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  background-color: inherit;
+  transition: 0.3s ease;
+}
+
+.bar::before {
+  transform: translateY(-1.2rem);
+}
+
+.bar::after {
+  transform: translateY(1.2rem);
+}
+
+.active .bar {
+  transform: rotate(360deg);
+  background-color: transparent;
+}
+
+.active .bar::after,
+.active:hover .bar::after {
+  transform: rotate(45deg);
+  background-color: var(--blue);
+}
+
+.active .bar::before,
+.active:hover .bar::before {
+  transform: rotate(-45deg);
+  background-color: var(--blue);
+}
+
+.active:hover .bar::after,
+.active:hover .bar::before {
+  background-color: var(--green);
+}
+
+/* Main */
