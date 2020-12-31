@@ -279,48 +279,73 @@ a {
 }
 
 .about__text {
-  width: 80%;
+  width: 100%;
   border-radius: 5px;
   padding: 1em 2.5em;
   margin: 1rem auto;
 }
 
 .about__text h1 {
-  font-size: 3.6rem;
-  color: var(--red);
+  font-size: 6.8rem;
+  color: var(--white);
+  font-weight: 500;
+  position: relative;
+}
+
+.about__text h1::before,
+.about__text h1::after {
+  content: "";
+  position: absolute;
+  height: 0.5rem;
+  width: 15rem;
+  background-color: var(--ComplementaryB);
+  border-radius: 5px;
+}
+
+.about__text h1::before {
+  top: 8rem;
+  left: 3.6rem;
+}
+
+.about__text h1::after {
+  top: 10rem;
+  left: 7.2rem;
+}
+
+/* Who Am I */
+.text-wrap {
+  width: 100%;
+  height: calc(100vh - 6.8rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .about__text p {
-  width: 80%;
+  width: 50%;
   display: block;
   color: var(--white);
   font-size: 2.4rem;
   text-align: justify;
   text-shadow: 1px 1px 2px black;
-  padding: 3.5rem 1.5rem 1.5rem 2rem;
-  background-color: rgba(253, 88, 33, 0.2);
-  border-radius: 15px;
-  margin: 1.5rem 2.5rem 1.5rem 25rem;
+  padding: 0.5em 2.5em;
 }
 
 .about__text img {
-  clear: left;
-  float: left;
   width: 30%;
-  border-radius: 5px;
-  margin: 10rem 1.5rem 1.5rem 2rem;
 }
 
 /* divider */
 .divider {
+  width: 50%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 6vh;
-  color: white;
+  text-align: left;
+  font-size: 4.8rem;
+  color: var(--white);
+  text-shadow: 1px 1px 2px var(--ComplementaryB);
 }
 
-.divider::after,
 .divider::before {
   content: "";
   display: block;
@@ -329,14 +354,22 @@ a {
 }
 
 .divider::before {
-  background: linear-gradient(to right, rgba(240, 240, 240, 0), #fff);
+  background: linear-gradient(
+    to right,
+    rgba(240, 240, 240, 0),
+    var(--ComplementaryA)
+  );
   margin-right: 4vh;
 }
 
-.divider::after {
-  background: linear-gradient(to left, rgba(240, 240, 240, 0), #fff);
+/* .divider::after {
+  background: linear-gradient(
+    to left,
+    rgba(240, 240, 240, 0),
+    var(--ComplementaryA)
+  );
   margin-left: 4vh;
-}
+} */
 
 /* To erase */
 .hidden {
