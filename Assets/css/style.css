@@ -2,6 +2,8 @@
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 :root {
@@ -12,11 +14,13 @@
   --background: #3e3e3e;
   --white: #f2f2f2;
 }
+
 html {
   width: 100%;
   height: 100vh;
   font-size: 10px;
   font-family: "Roboto", sans-serif;
+  margin: 0;
 }
 
 body {
@@ -28,6 +32,16 @@ body {
   justify-content: space-between;
   flex-direction: row-reverse;
   background-color: #3e3e3e;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+}
+
+section {
+  width: 100%;
+  height: 100%;
 }
 
 header {
@@ -201,35 +215,19 @@ a {
 }
 
 /* ============================
-          Layout 
-===============================*/
-
-.container {
-  width: 100%;
-}
-
-.scope {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  background-image: url("/Assets/img/bg-main.jpg");
-  background-size: cover;
-  background-repeat: none;
-}
-
-/* ============================
           Main container 
 ===============================*/
 
-.main {
-  width: 60%;
-  height: 30rem;
-  margin-left: 5rem;
+.container-main {
+  width: 100%;
+  height: 100%;
+  padding-left: 20rem;
   display: flex;
   flex-direction: column;
-  transform: translateY(-25%);
+  justify-content: center;
+  background-image: url("/Assets/img/bg-main.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .banner {
@@ -251,7 +249,7 @@ a {
   font-size: 2.4rem;
   text-align: justify;
   letter-spacing: 0.1rem;
-  margin-top: 0.2rem;
+  margin-bottom: 4.8rem;
 }
 
 .btn {
@@ -263,6 +261,7 @@ a {
   text-align: center;
   letter-spacing: 1px;
   border-radius: 15px;
+  border: var(--red) 2px solid;
   padding: 1rem 1.5rem;
 }
 
@@ -273,27 +272,46 @@ a {
 }
 
 /* About section */
-.about {
+.container-about {
   width: 100%;
   height: 100%;
+  background-image: url("/Assets/img/bg-about.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.about__text {
-  width: 100%;
-  border-radius: 5px;
-  padding: 1em 2.5em;
-  margin: 1rem auto;
-}
-
-.about__text h1 {
+.about-title {
   font-size: 6.8rem;
   color: var(--white);
   font-weight: 500;
+  text-align: center;
+  text-shadow: 2px 2px var(--background);
   position: relative;
+  margin-left: 5em;
+  transform: translateX(-30%);
+  cursor: default;
 }
 
-.about__text h1::before,
-.about__text h1::after {
+.about-title:hover {
+  color: var(--ComplementaryB);
+}
+.about-title:hover span {
+  color: var(--white);
+}
+
+.about-title span {
+  color: var(--ComplementaryB);
+}
+
+.about-title span:hover {
+  color: var(--white);
+}
+
+.about-title::before,
+.about-title::after {
   content: "";
   position: absolute;
   height: 0.5rem;
@@ -302,37 +320,65 @@ a {
   border-radius: 5px;
 }
 
-.about__text h1::before {
+.about-title::before {
   top: 8rem;
   left: 3.6rem;
 }
 
-.about__text h1::after {
+.about-title::after {
   top: 10rem;
   left: 7.2rem;
 }
 
-/* Who Am I */
-.text-wrap {
+.container-description {
   width: 100%;
-  height: calc(100vh - 6.8rem);
+  height: 100%;
+}
+
+.about-who {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.about__text p {
-  width: 50%;
-  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 4.8rem;
+  margin-top: 5rem;
   color: var(--white);
-  font-size: 2.4rem;
-  text-align: justify;
-  text-shadow: 1px 1px 2px black;
-  padding: 0.5em 2.5em;
 }
 
-.about__text img {
+.about-who::before,
+.about-who::after {
+  content: "";
+  display: block;
+  height: 4px;
   width: 30%;
+}
+
+.about-who::before {
+  background: linear-gradient(
+    to right,
+    rgba(240, 240, 240, 0),
+    var(--ComplementaryB)
+  );
+  margin-right: 4vh;
+}
+
+.about-who::after {
+  background: linear-gradient(
+    to left,
+    rgba(240, 240, 240, 0),
+    var(--ComplementaryB)
+  );
+  margin-left: 4vh;
+}
+
+.about-description {
+  width: 95%;
+  margin-top: 7rem;
+  margin-left: 2.4rem;
+  font-size: 2.4rem;
+  color: var(--white);
+  text-align: justify;
 }
 
 /* divider */
