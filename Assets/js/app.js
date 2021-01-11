@@ -13,10 +13,10 @@ const navAbout = document.getElementById("nav-about");
 hamburgerBtn.addEventListener("click", () => {
   hamburgerBtn.classList.toggle("active");
   if (hamburgerBtn.classList.contains("active")) {
-    menuPanel.classList.toggle("show-menu");
+    menuPanel.classList.toggle("active");
     mainPage.classList.toggle("flip-view");
   } else {
-    menuPanel.classList.toggle("show-menu");
+    menuPanel.classList.toggle("active");
     mainPage.classList.toggle("flip-view");
   }
 });
