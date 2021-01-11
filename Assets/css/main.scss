@@ -6,9 +6,14 @@
 
 $colors: (
   primary: #06bee1,
-  font: #040404,
+  focus: #2bbc89,
   background: #48cae4,
+  background-dark: darken(#48cae4, 40%),
+  background-light: lighten(#48cae4, 20%),
   blanck: #f2f2f2,
+  font: #040404,
+  secondary: #346ac9,
+  space: #d9e5f5,
 );
 
 @function color($colorscheme) {
@@ -46,50 +51,46 @@ header {
       width: 100%;
       height: 5px;
       border-radius: 2px;
-      background-color: color(blanck);
+      background-color: color(background-dark);
       transition: 1s ease;
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        @extend .bar;
+      }
+
+      &::after {
+        transform: translateY(-12px);
+      }
+
+      &::before {
+        transform: translateY(12px);
+      }
     }
 
-    .bar::after,
-    .bar::before {
-      content: "";
-      width: inherit;
-      height: inherit;
-      position: absolute;
-      border-radius: inherit;
-      background-color: color(blanck);
-      transition: 0.5s ease;
-      transition-duration: 1s ease;
+    &:hover {
+      .bar::before {
+        transform: translateY(10px);
+      }
+      .bar::after {
+        transform: translateY(-10px);
+      }
     }
 
-    .bar::after {
-      transform: translateY(-12px);
-    }
-
-    .bar::before {
-      transform: translateY(12px);
-    }
-  }
-
-  .hamburger-menu:hover {
-    .bar::before {
-      transform: translateY(10px);
-    }
-    .bar::after {
-      transform: translateY(-10px);
-    }
-  }
-
-  .hamburger-menu.active {
-    .bar {
-      transform: rotate(360deg);
-      background-color: transparent;
-    }
-    .bar::after {
-      transform: rotate(45deg);
-    }
-    .bar::before {
-      transform: rotate(-45deg);
+    &.active {
+      .bar {
+        transform: rotate(360deg);
+        background-color: transparent;
+        &::before {
+          background-color: color(background-dark);
+          transform: rotate(-45deg);
+        }
+        &::after {
+          background-color: color(background-dark);
+          transform: rotate(45deg);
+        }
+      }
     }
   }
 
@@ -102,9 +103,9 @@ header {
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
-    background-color: red;
+    background-color: color(background-light);
     z-index: 1000;
-    transition-duration: 2s;
+    transition-duration: 1s;
     transition-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
 
     ul {
@@ -116,13 +117,50 @@ header {
         margin-top: 2em;
         a {
           text-decoration: none;
+          position: relative;
+          color: #346ac9;
+          border-bottom: 4px solid color(focus);
+          transition: 0.3s;
+
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 6px;
+            background-color: color(background-light);
+            transition: 0.3s ease;
+          }
+
+          &::before {
+            bottom: -2px;
+            transform: translateX(-49%) translateY(2px);
+          }
+
+          &::after {
+            bottom: -2px;
+            left: 0;
+            transform: translateY(2px) translateX(50%);
+          }
+
+          &:hover {
+            color: color(focus);
+          }
+
+          &:hover::before {
+            transform: translateY(4px) translateX(-100%);
+          }
+
+          &:hover::after {
+            transform: translateY(4px) translateX(100%);
+          }
         }
       }
     }
-  }
 
-  .navigation.active {
-    width: 30%;
+    &.active {
+      width: 30%;
+    }
   }
 }
 
@@ -170,10 +208,30 @@ main {
         font-size: 1.6rem;
         text-transform: uppercase;
         text-decoration: none;
-        color: color(font);
-        background-color: color(primary);
+        letter-spacing: 1px;
+        background-color: color(background);
+        color: color(blanck);
         padding: 1em 2em;
         border-radius: 4px;
+        position: relative;
+        overflow: hidden;
+        &::after {
+          content: "";
+          position: absolute;
+          top: -50px;
+          left: -75px;
+          width: 40px;
+          height: 155px;
+          background: white;
+          opacity: 0.2;
+          transform: rotate(35deg);
+          transition: all 700ms cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        &:hover::after {
+          left: 120%;
+          transition: all 750ms cubic-bezier(0.19, 1, 0.22, 1);
+        }
       }
     }
 
