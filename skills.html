@@ -3,44 +3,105 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Skills</title>
+    <link rel="stylesheet" href="/Assets/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
+    <header>
+      <div class="hamburger-menu">
+        <div class="bar"></div>
+      </div>
+      <nav class="navigation" id="MenuPanel">
+        <ul>
+          <li id="nav-home"><a href="index.html">Home</a></li>
+          <li id="nav-skills"><a href="skills.html">Skills</a></li>
+          <li id="nav-work"><a href="#">Work</a></li>
+          <li id="nav-about"><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
     <main>
       <section id="skillsPage" class="hidden">
         <div class="container skills">
           <div class="skill-card">
-            <h5 style="--p: 80">
-              <i class="fas fa-tools"></i> HTML (1 year) 80%
-            </h5>
+            <div class="logo">
+              <img src="/Assets/img/icons/html.png" alt="html logo" />
+            </div>
+            <div class="info">
+              <h5 style="--p: 80">
+                <i class="fas fa-tools"></i> HTML<span> 1 year </span>
+              </h5>
+            </div>
           </div>
+
           <div class="skill-card">
-            <h5 style="--p: 80">
-              <i class="fas fa-tools"></i> CSS (1 year) 80%
-            </h5>
+            <div class="logo">
+              <img src="/Assets/img/icons/css.png" alt="css logo" />
+            </div>
+            <div class="info">
+              <h5 style="--p: 80">
+                <i class="fas fa-tools"></i> CSS<span> 1 year </span>
+              </h5>
+            </div>
           </div>
+
           <div class="skill-card">
-            <h5 style="--p: 80">
-              <i class="fas fa-tools"></i> Javascript (1 year) 80%
-            </h5>
+            <div class="logo">
+              <img
+                src="/Assets/img/icons/javascript.png"
+                alt="javascript logo"
+              />
+            </div>
+            <div class="info">
+              <h5 style="--p: 80">
+                <i class="fas fa-tools"></i> Javascript<span> 1 year </span>
+              </h5>
+            </div>
           </div>
+
           <div class="skill-card">
-            <h5 style="--p: 40">
-              <i class="fas fa-tools"></i> Java (6 months) 40%
-            </h5>
+            <div class="logo">
+              <img src="/Assets/img/icons/java.png" alt="java logo" />
+            </div>
+            <div class="info">
+              <h5 style="--p: 40">
+                <i class="fas fa-tools"></i> JAVA<span> 6 months</span>
+              </h5>
+            </div>
           </div>
+
           <div class="skill-card">
-            <h5 style="--p: 80">
-              <i class="fas fa-tools"></i> MySQL (1 year) 80%
-            </h5>
+            <div class="logo">
+              <img src="/Assets/img/icons/mysql.png" alt="mysql logo" />
+            </div>
+            <div class="info">
+              <h5 style="--p: 80">
+                <i class="fas fa-tools"></i> MySQL<span> 1 year </span>
+              </h5>
+            </div>
           </div>
+
           <div class="skill-card">
-            <h5 style="--p: 80">
-              <i class="fas fa-tools"></i> Git 1 (1 year) 80%
-            </h5>
+            <div class="logo">
+              <img src="/Assets/img/icons/git.png" alt="git logo" />
+            </div>
+            <div class="info">
+              <h5 style="--p: 80">
+                <i class="fas fa-tools"></i> Git<span> 1 year </span>
+              </h5>
+            </div>
           </div>
         </div>
       </section>
     </main>
+
+    <script src="/Assets/js/app.js"></script>
   </body>
 </html>
