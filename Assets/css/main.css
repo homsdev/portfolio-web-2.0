@@ -685,4 +685,147 @@ html {
           transform: rotate(45deg);
   z-index: -1;
 }
+
+.education {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.education h3 {
+  font-size: 9.6rem;
+  margin: 0;
+}
+
+.education-content {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.education-content .box {
+  width: 50%;
+  background-color: #d9e5f5;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  border-radius: 10px;
+}
+
+.education-content .box h5 {
+  font-size: 3.2rem;
+  margin: 0;
+}
+
+.education-content .box h5 span {
+  color: #2bbc89;
+}
+
+.education-content .box h5 i {
+  margin-right: 5px;
+}
+
+.education-content .box p,
+.education-content .box a {
+  font-size: 1.6rem;
+  color: #040404;
+  margin-left: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: block;
+  position: relative;
+}
+
+.education-content .box p span,
+.education-content .box a span {
+  font-weight: 100;
+}
+
+.education-content .box p::before,
+.education-content .box a::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #2bbc89;
+  border-radius: 50%;
+  left: -40px;
+}
+
+.education-content .box a {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.education-content .box .focus-text {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.education-content .box:nth-child(odd) {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact .content {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 2rem 1rem;
+}
+
+.contact .content .card {
+  width: 100%;
+}
+
+.contact .content .card img {
+  display: block;
+  width: 30%;
+  margin: 1rem auto;
+}
+
+.contact .content .card p {
+  font-size: 2.4rem;
+  font-weight: 100;
+  text-align: center;
+}
+
+.contact .content .card p a {
+  color: #0c4854;
+}
 /*# sourceMappingURL=main.css.map */

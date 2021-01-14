@@ -1,25 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;900&display=swap");
 @import "_layout.scss";
-
-$colors: (
-  primary: #06bee1,
-  focus: #2bbc89,
-  background: #48cae4,
-  background-dark: darken(#48cae4, 40%),
-  background-light: lighten(#48cae4, 20%),
-  blanck: #3f2d2d,
-  font: #040404,
-  font-light: lighten(#040404, 60%),
-  secondary: #346ac9,
-  space: #d9e5f5,
-);
-
-$title_font: 9.6rem;
-$timefunction: cubic-bezier(0.68, -0.6, 0.32, 1.6);
-
-@function color($colorscheme) {
-  @return map-get($map: $colors, $key: $colorscheme);
-}
+@import "_variables.scss";
 
 html {
   font-size: 10px;
