@@ -1,0 +1,101 @@
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 3s ease;
+  h1 {
+    position: relative;
+    letter-spacing: 10px;
+    text-align: center;
+    font-size: $title_font;
+    color: color(background);
+    cursor: pointer;
+    span {
+      color: white;
+      margin-left: 3rem;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 8px;
+      background-color: color(background-light);
+      border-radius: 4px;
+      transition: 800ms;
+      transition-timing-function: $timefunction;
+    }
+
+    &::after {
+      bottom: 0;
+      left: 0;
+      transform: translateX(200%);
+    }
+
+    &::before {
+      transform: translateX(-200%);
+    }
+
+    &:hover {
+      &::after {
+        transform: translateX(0);
+      }
+      &::before {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+.who {
+  background-image: url("/Assets/img/bg-who.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-rows: 10rem 1fr;
+  grid-template-areas:
+    "title"
+    "text";
+  h3 {
+    grid-area: title;
+    font-size: $title_font;
+    color: #1a4858ff;
+    text-shadow: 3px 3px 0px white;
+    text-align: center;
+    margin: 0;
+  }
+  .text {
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "image text";
+    gap: 10px;
+    p {
+      position: relative;
+      grid-area: text;
+      padding: 2rem 4rem;
+      border-radius: 4px;
+      background-color: white;
+      align-self: flex-start;
+      font-size: 3.2rem;
+      text-align: justify;
+      text-shadow: 1px 1px white;
+      color: color(font);
+      z-index: 1;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 3rem;
+        left: -1.5rem;
+        height: 6rem;
+        width: 6rem;
+        background-color: white;
+        transform: rotate(45deg);
+        z-index: -1;
+      }
+    }
+  }
+}

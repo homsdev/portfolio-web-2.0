@@ -269,7 +269,7 @@ html {
 .main .lottie {
   width: 100%;
   -ms-grid-row: 1;
-  -ms-grid-column: 2;
+  -ms-grid-column: 1;
   grid-area: image;
 }
 
@@ -558,5 +558,131 @@ html {
 .project .info .tools ul li:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
+}
+
+.about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 3s ease;
+  transition: 3s ease;
+}
+
+.about h1 {
+  position: relative;
+  letter-spacing: 10px;
+  text-align: center;
+  font-size: 9.6rem;
+  color: #48cae4;
+  cursor: pointer;
+}
+
+.about h1 span {
+  color: white;
+  margin-left: 3rem;
+}
+
+.about h1::before, .about h1::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 8px;
+  background-color: #a1e4f1;
+  border-radius: 4px;
+  -webkit-transition: 800ms;
+  transition: 800ms;
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+          transition-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.about h1::after {
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+}
+
+.about h1::before {
+  -webkit-transform: translateX(-200%);
+          transform: translateX(-200%);
+}
+
+.about h1:hover::after {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.about h1:hover::before {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.who {
+  background-image: url("/Assets/img/bg-who.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 10rem 1fr;
+      grid-template-rows: 10rem 1fr;
+      grid-template-areas: "title" "text";
+}
+
+.who h3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: title;
+  font-size: 9.6rem;
+  color: #1a4858ff;
+  text-shadow: 3px 3px 0px white;
+  text-align: center;
+  margin: 0;
+}
+
+.who .text {
+  display: -ms-grid;
+  display: grid;
+  padding: 1rem;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "image text";
+  gap: 10px;
+}
+
+.who .text p {
+  position: relative;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: text;
+  padding: 2rem 4rem;
+  border-radius: 4px;
+  background-color: white;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  font-size: 3.2rem;
+  text-align: justify;
+  text-shadow: 1px 1px white;
+  color: #040404;
+  z-index: 1;
+}
+
+.who .text p::before {
+  content: "";
+  position: absolute;
+  top: 3rem;
+  left: -1.5rem;
+  height: 6rem;
+  width: 6rem;
+  background-color: white;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  z-index: -1;
 }
 /*# sourceMappingURL=main.css.map */
