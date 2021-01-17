@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="Assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
       integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./assets/css/animate.css" />
   </head>
   <body>
     <header>
@@ -32,12 +33,14 @@
         <div class="container main">
           <div class="bg"></div>
           <div class="banner">
-            <h1><span>Hello!</span> <br />Everyone calls me HomS.</h1>
-            <p>
+            <h1 data-ani="zoom-in-right">
+              <span>Hello!</span> <br />Everyone calls me HomS.
+            </h1>
+            <p data-ani="zoom-in-left">
               Welcome to my personal website, here you can find some of my
               personal projects and skills
             </p>
-            <a href="about.html">Are you curious?</a>
+            <a href="about.html" data-ani="fade-up">Are you curious?</a>
           </div>
           <lottie-player
             class="lottie"

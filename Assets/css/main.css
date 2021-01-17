@@ -238,7 +238,7 @@ html {
   text-decoration: none;
   letter-spacing: 1px;
   background-color: #48cae4;
-  color: #3f2d2d;
+  color: #d9e5f5;
   padding: 1em 2em;
   border-radius: 4px;
   position: relative;
@@ -288,8 +288,8 @@ html {
 .skills .skill-card {
   border-radius: 10px;
   padding: 20px;
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 2s;
+  transition: 2s;
   -webkit-transition-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
           transition-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
   display: -webkit-box;
@@ -468,13 +468,12 @@ html {
 .project .pictures img {
   width: 30%;
   border-radius: 4px;
-  -webkit-transition: 1s ease;
-  transition: 1s ease;
 }
 
 .project .pictures img:nth-child(2) {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  z-index: 1000;
 }
 
 .project .info {
@@ -572,6 +571,7 @@ html {
           justify-content: center;
   -webkit-transition: 3s ease;
   transition: 3s ease;
+  overflow: hidden;
 }
 
 .about h1 {
@@ -644,6 +644,7 @@ html {
   text-shadow: 3px 3px 0px white;
   text-align: center;
   margin: 0;
+  margin-top: 1rem;
 }
 
 .who .text {

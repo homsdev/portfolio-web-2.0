@@ -1,40 +1,38 @@
 const hamburgerBtn = document.querySelector(".hamburger-menu");
 const menuPanel = document.getElementById("MenuPanel");
-// Sections
-const mainPage = document.getElementById("mainPage");
-const skillsPage = document.getElementById("skillsPage");
+const animatedElements = document.querySelectorAll("[data-ani]");
 
-// Menu Options
-const navHome = document.getElementById("nav-home");
-const navSkills = document.getElementById("nav-skills");
-const navWork = document.getElementById("nav-work");
-const navAbout = document.getElementById("nav-about");
+const options = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.7,
+};
+
+function scrollELement(element, options) {
+  const internalCallback = function (entries) {
+    let observedElement = entries[0];
+    observedElement.isIntersecting
+      ? element.classList.add("min-ani-scroll")
+      : element.classList.remove("min-ani-scroll");
+  };
+
+  const observer = new IntersectionObserver(internalCallback, options);
+  observer.observe(element);
+}
+
+function watchElements(elements, options) {
+  elements.forEach((element) => {
+    scrollELement(element, options);
+  });
+}
 
 hamburgerBtn.addEventListener("click", () => {
   hamburgerBtn.classList.toggle("active");
   if (hamburgerBtn.classList.contains("active")) {
     menuPanel.classList.toggle("active");
-    mainPage.classList.toggle("flip-view");
   } else {
     menuPanel.classList.toggle("active");
-    mainPage.classList.toggle("flip-view");
   }
 });
 
-function navigationMenu(menuItem, pageSection) {
-  menuItem.addEventListener("click", () => {
-    let active = document.querySelector(".flip-view");
-    if (active.id != pageSection.id) {
-      active.classList.toggle("hidden");
-    } else {
-      if (pageSection.classList.contains("hidden")) {
-        pageSection.classList.toggle("hidden");
-      } else {
-        console.log(`${pageSection} no contiene hidden`);
-      }
-    }
-  });
-}
-
-navigationMenu(navHome, mainPage);
-navigationMenu(navSkills, skillsPage);
+watchElements(animatedElements, options);

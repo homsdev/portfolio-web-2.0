@@ -10,6 +10,7 @@
       integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./assets/css/animate.css" />
     <title>Works</title>
   </head>
   <body>
@@ -26,6 +27,7 @@
         </ul>
       </nav>
     </header>
+
     <main>
       <section>
         <div class="banner-works">
@@ -33,18 +35,33 @@
         </div>
 
         <div class="container project">
-          <div class="title">
+          <div class="title" data-ani="flip-up">
             <h2>ChiHo CRM</h2>
           </div>
           <div class="pictures">
-            <img src="/Assets/img/chiho-2.jpg" alt="" class="picture" />
-            <img src="/Assets/img/chiho-1.jpg" alt="" class="picture" />
-            <img src="/Assets/img/chiho-3.jpg" alt="" class="picture" />
+            <img
+              src="/Assets/img/chiho-2.jpg"
+              alt=""
+              class="picture"
+              data-ani="zoom-out-left"
+            />
+            <img
+              src="/Assets/img/chiho-1.jpg"
+              alt=""
+              class="picture"
+              data-ani="fade"
+            />
+            <img
+              src="/Assets/img/chiho-3.jpg"
+              alt=""
+              class="picture"
+              data-ani="zoom-out-right"
+            />
           </div>
           <div class="info">
             <div class="description">
-              <p>Date: <span>31/07/2020</span></p>
-              <p>
+              <p data-ani="fade-right">Date: <span>31/07/2020</span></p>
+              <p data-ani="fade-left">
                 <span>ChiHo</span> is a Web application builded by students from
                 Instituto Politécnico Nacional at the Higher School of
                 Mechanical and Electrical Engineering. ChiHo's goal is to
@@ -54,11 +71,11 @@
                 classify their clients by showing them all information about a
                 client
               </p>
-              <a href="https://testcrmproject.herokuapp.com/"
+              <a href="https://testcrmproject.herokuapp.com/" data-ani="flip-up"
                 >Go visit Us! <i class="fas fa-external-link-alt"></i
               ></a>
             </div>
-            <div class="tools">
+            <div class="tools" data-ani="flip-right">
               <ul>
                 <li>NodeJs</li>
                 <li>MySQL</li>
@@ -69,34 +86,44 @@
         </div>
 
         <div class="container project">
-          <div class="title">
-            <h2>Anime DB</h2>
+          <div class="title" data-ani="flip-up">
+            <h2>Anime Space</h2>
           </div>
           <div class="pictures">
-            <img src="/Assets/img/anime-2.jpg" alt="" class="picture" />
-            <img src="/Assets/img/anime-1.jpg" alt="" class="picture" />
-            <img src="/Assets/img/anime-2.jpg" alt="" class="picture" />
+            <img
+              src="/Assets/img/anime-2.jpg"
+              alt=""
+              class="picture"
+              data-ani="zoom-out-left"
+            />
+            <img
+              src="/Assets/img/anime-1.jpg"
+              alt=""
+              class="picture"
+              data-ani="fade"
+            />
+            <img
+              src="/Assets/img/anime-2.jpg"
+              alt=""
+              class="picture"
+              data-ani="zoom-out-right"
+            />
           </div>
           <div class="info">
             <div class="description">
-              <p>Date: <span>31/07/2020</span></p>
-              <p>
-                <span>ChiHo</span> is a Web application builded by students from
-                Instituto Politécnico Nacional at the Higher School of
-                Mechanical and Electrical Engineering. ChiHo's goal is to
-                provide a free online medium for Micro, Small and Medium Mexican
-                Enterprises that want to improve relationships with their
-                clients. It makes all the CRUD operations and allows workers to
-                classify their clients by showing them all information about a
-                client
+              <p data-ani="fade-right">Date: <span>04/11/2020</span></p>
+              <p data-ani="fade-left">
+                <span>Anime Space</span> is a personal project with the purpose
+                of practicing WEB API development with Angular and NodeJS using
+                Typescript in the frontend and backend
               </p>
-              <a href="https://anime-db-homs.web.app/main">
-                Go visit Us! <i class="fas fa-external-link-alt"></i>
-              </a>
+              <a href="https://anime-db-homs.web.app" data-ani="flip-up"
+                >Go visit Us! <i class="fas fa-external-link-alt"></i
+              ></a>
             </div>
-            <div class="tools">
+            <div class="tools" data-ani="flip-right">
               <ul>
-                <li>Typescript (NodeJs)</li>
+                <li>NodeJs (Typescript)</li>
                 <li>MySQL</li>
                 <li>Angular JS</li>
               </ul>

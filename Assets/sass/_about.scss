@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   transition: 3s ease;
+  overflow: hidden;
   h1 {
     position: relative;
     letter-spacing: 10px;
@@ -65,6 +66,7 @@
     text-shadow: 3px 3px 0px white;
     text-align: center;
     margin: 0;
+    margin-top: 1rem;
   }
   .text {
     display: grid;

@@ -82,9 +82,9 @@
     img {
       width: 30%;
       border-radius: 4px;
-      transition: 1s ease;
       &:nth-child(2) {
-        transform: scale(1.2);
+        transform: scale(1.1);
+        z-index: 1000;
       }
     }
   }
