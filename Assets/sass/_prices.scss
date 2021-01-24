@@ -1,0 +1,29 @@
+table {
+  width: 80%;
+  text-align: left;
+  font-size: 1.2rem;
+  padding: 0;
+  margin: 1rem auto;
+  border-collapse: collapse;
+  background-color: white;
+
+  thead {
+    color: white;
+    background-color: #246355;
+    border-bottom: 0.3rem solid #0f362d;
+  }
+
+  tr:nth-child(even) {
+    background-color: #ddd;
+  }
+
+  tbody > tr:hover {
+    background-color: #369681;
+    color: white;
+  }
+
+  td,
+  th {
+    padding: 0.5em;
+  }
+}
