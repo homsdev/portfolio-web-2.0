@@ -1,6 +1,8 @@
 const hamburgerBtn = document.querySelector(".hamburger-menu");
 const menuPanel = document.getElementById("MenuPanel");
 const animatedElements = document.querySelectorAll("[data-ani]");
+const btnList = document.querySelectorAll(".btn");
+const shopping_list = document.getElementById("shopping_list").children.item(1);
 
 const options = {
   root: null,
@@ -20,9 +22,29 @@ function scrollELement(element, options) {
   observer.observe(element);
 }
 
+function addToCart(element) {
+  let flag = false;
+  let childrenList = element.children;
+  childrenList.item(4).innerHTML = 1;
+  element.children = childrenList;
+
+  if (!flag) {
+    shopping_list.appendChild(element);
+  }
+}
+
 function watchElements(elements, options) {
   elements.forEach((element) => {
     scrollELement(element, options);
+  });
+}
+
+function watchList(list) {
+  list.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      let Row = e.target.parentElement.parentElement.cloneNode(true);
+      addToCart(Row);
+    });
   });
 }
 
@@ -36,3 +58,4 @@ hamburgerBtn.addEventListener("click", () => {
 });
 
 watchElements(animatedElements, options);
+watchList(btnList);
