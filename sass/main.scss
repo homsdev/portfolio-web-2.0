@@ -67,26 +67,50 @@ html {
 }
 
 .navigation {
-  width: 0%;
-  height: 100vh;
   position: fixed;
   right: 0;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
   background-color: color(background-light);
-  z-index: 1000;
   transition-duration: 1s;
   transition-timing-function: $timefunction;
+  overflow: hidden;
+  z-index: 1000;
+
+  @include smarthphone {
+    width: 100%;
+    height: 0;
+  }
+
+  @include tablet {
+  }
+
+  @include laptop {
+    width: 0%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
   h1 {
-    text-align: center;
-    color: white;
-    font-size: 3rem;
-    font-weight: 400;
     letter-spacing: 1px;
+
+    @include smarthphone {
+      position: fixed;
+      top: 0.5rem;
+      left: 0.5rem;
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: color(background-dark);
+    }
+
+    @include laptop {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 400;
+      color: color(blanck);
+    }
   }
 
   ul {
@@ -95,8 +119,22 @@ html {
     font-size: 3rem;
     text-align: center;
     padding: 0;
+
+    @include smarthphone {
+      position: absolute;
+      left: 0;
+      top: 2rem;
+      width: 100%;
+    }
+
     li {
-      margin-top: 2em;
+      @include smarthphone {
+        margin-top: 1em;
+      }
+
+      @include laptop {
+        margin-top: 2em;
+      }
       a {
         text-decoration: none;
         position: relative;
@@ -141,7 +179,13 @@ html {
   }
 
   &.active {
-    width: 30%;
+    @include smarthphone {
+      height: 50vh;
+    }
+
+    @include laptop {
+      width: 30%;
+    }
   }
 }
 
@@ -149,21 +193,46 @@ html {
   width: 100%;
   height: 100vh;
   position: absolute;
-  background-color: color(background);
-  clip-path: polygon(60% 0, 100% 0%, 100% 100%, 40% 100%);
   z-index: -1;
+
+  @include smarthphone {
+    background-color: color(blanck);
+  }
+
+  @include laptop {
+    background-color: color(background);
+    clip-path: polygon(60% 0, 100% 0%, 100% 100%, 40% 100%);
+  }
 }
 
 .main {
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-areas: "banner image";
-  justify-items: center;
-  align-items: center;
+  @include smarthphone {
+  }
+
+  @include laptop {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "banner image";
+    justify-items: center;
+    align-items: center;
+  }
 
   .banner {
     width: 100%;
-    grid-area: banner;
-    padding: 2em 4em;
+
+    @include smarthphone {
+      margin-top: 3rem;
+      padding: 1em 2em;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      overflow: hidden;
+    }
+
+    @include laptop {
+      grid-area: banner;
+      padding: 2em 4em;
+    }
+
     h1 {
       font-size: 4.8rem;
       color: color(font);
@@ -177,6 +246,7 @@ html {
       text-align: justify;
       margin-bottom: 2em;
     }
+
     a {
       font-size: 1.6rem;
       text-transform: uppercase;
@@ -188,6 +258,12 @@ html {
       border-radius: 4px;
       position: relative;
       overflow: hidden;
+
+      @include smarthphone {
+        position: absolute;
+        bottom: 1rem;
+      }
+
       &::after {
         content: "";
         position: absolute;
@@ -209,8 +285,13 @@ html {
   }
 
   .lottie {
-    width: 100%;
-    grid-area: image;
+    @include smarthphone {
+      display: none;
+    }
+    @include laptop {
+      width: 100%;
+      grid-area: image;
+    }
   }
 }
 

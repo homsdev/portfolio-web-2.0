@@ -1,25 +1,24 @@
 .banner-works {
   width: 100%;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: clip-path 2s ease;
 
   h1 {
     position: relative;
     font-size: $title_font;
-    color: color(space);
-    box-shadow: 0px 27px 18px -18px color(background-dark);
     transition: 1s ease;
+    color: color(blanck);
+    box-shadow: 0px 27px 18px -18px color(background-dark);
+
     &::before {
       content: "";
       position: absolute;
       width: 100%;
       height: 5px;
       bottom: 0;
-      background-color: color(space);
       border-radius: 4px;
+      background-color: color(space);
     }
 
     &:hover {
@@ -32,10 +31,10 @@
     position: absolute;
     width: 85%;
     height: 85%;
-    background-color: color(focus);
-    border-radius: 15px;
-    clip-path: circle(25%);
     transition: clip-path 2.5s;
+    clip-path: circle(25%);
+    border-radius: 15px;
+    background-color: color(focus);
   }
 
   &:hover::before {
@@ -107,8 +106,8 @@
       }
 
       a {
-        display: block;
         width: 50%;
+        display: block;
         height: 4rem;
         border-radius: 5px;
         background-color: color(focus);
@@ -157,6 +156,62 @@
             transform: scale(1.2);
           }
         }
+      }
+    }
+  }
+}
+
+@include smarthphone {
+  .banner-works {
+    width: 100%;
+    height: 200px;
+    margin: {
+      bottom: 4rem;
+    }
+    &::before {
+      display: none;
+    }
+    h1 {
+      color: color(focus);
+    }
+  }
+
+  .project {
+    margin: {
+      bottom: 3rem;
+    }
+    .title {
+      h2 {
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
+    }
+    .pictures {
+      background-color: red;
+      margin: 0 auto;
+      width: 80%;
+      z-index: 1;
+      img {
+        width: 100%;
+        &:nth-child(1),
+        &:nth-child(3) {
+          display: none;
+        }
+      }
+    }
+
+    .info {
+      flex-direction: column;
+      .description {
+        width: 100%;
+        a {
+          width: 100%;
+        }
+      }
+      .tools {
+        width: 100%;
       }
     }
   }

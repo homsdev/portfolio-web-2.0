@@ -26,6 +26,12 @@ function watchElements(elements, options) {
   });
 }
 
+function loadElements(elements) {
+  elements.forEach((element) => {
+    element.classList.add("min-ani-scroll");
+  });
+}
+
 hamburgerBtn.addEventListener("click", () => {
   hamburgerBtn.classList.toggle("active");
   if (hamburgerBtn.classList.contains("active")) {
@@ -35,4 +41,8 @@ hamburgerBtn.addEventListener("click", () => {
   }
 });
 
-watchElements(animatedElements, options);
+if (window.innerWidth > 1200) {
+  watchElements(animatedElements, options);
+} else if (window.innerWidth > 0 && window.innerWidth <= 600) {
+  loadElements(animatedElements);
+}
