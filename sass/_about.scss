@@ -208,3 +208,70 @@
     }
   }
 }
+
+@include smarthphone {
+  .container {
+    background-color: white;
+  }
+  .about {
+    max-width: 100%;
+    max-height: 80vh;
+    .bg {
+      display: none;
+    }
+    h1 {
+      font-size: 4.2rem;
+      margin: 0;
+      span {
+        margin: 0;
+        color: color(background);
+      }
+    }
+  }
+
+  .who {
+    background-image: none;
+    display: flex;
+    flex-direction: column;
+    h3 {
+      font-size: 3.8rem;
+    }
+
+    .text {
+      width: 100%;
+      display: block;
+      p {
+        padding: 1rem;
+        margin: 0;
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  .education {
+    h3 {
+      font-size: 3.2rem;
+      text-align: center;
+    }
+
+    .education-content {
+      .box {
+        width: 90%;
+        h5 {
+          font-size: 2.4rem;
+        }
+      }
+    }
+  }
+
+  .contact {
+    .bg {
+      display: none;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
