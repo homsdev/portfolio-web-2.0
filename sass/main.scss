@@ -295,6 +295,9 @@ html {
   }
 }
 
+@include smarthphone {
+}
+
 @import "_skills.scss";
 @import "_works.scss";
 @import "_about.scss";
